@@ -6,8 +6,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>BEER<span className="App-header--grey">GURU</span></h1>
-        <Beers />
       </header>
+      <Beers />
     </div>
   );
 }

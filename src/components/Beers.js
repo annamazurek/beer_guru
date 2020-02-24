@@ -69,18 +69,18 @@ class Beers extends Component {
 console.log(beers)
     const beersList = beers.map(beer => {
       return (
-        <li>
-          <img src={ beer.image_url }/>
-          <h2>{ beer.name }</h2>
-          <p>{ beer.tagline }</p>
+        <li className="Beers-list__item">
+          <img className="Beers-list__img" src={ beer.image_url }/>
+          <h2 className="Beers-list__name" title={beer.name}>{ beer.name }</h2>
+          <p className="Beers-list__tag" title={beer.tagline}>{ beer.tagline }</p>
         </li>
       )
     })
 // console.log(beersList)
 
     return (
-      <div>
-        <ul>
+      <div className="Beers">
+        <ul className="Beers-list">
           { beersList }
         </ul>
       </div>

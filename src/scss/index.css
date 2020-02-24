@@ -12,8 +12,63 @@ body {
   font-weight: 600;
   letter-spacing: -1px;
   color: #fdc22a;
+  margin-bottom: 60px;
 }
 
 .App-header--grey {
   color: #737373;
+}
+
+.Beers-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.Beers-list__item {
+  background: #fff;
+  list-style: none;
+  width: 220px;
+  margin-bottom: 40px;
+  margin-right: 12px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 24px 4px rgba(0, 0, 0, 0.01);
+  border-radius: 2px;
+}
+
+.Beers-list__item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.18);
+}
+
+.Beers-list__img {
+  height: 180px;
+  margin-bottom: 8px;
+}
+
+.Beers-list__name {
+  width: 100%;
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fdc22a;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.Beers-list__tag {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  color: #bdbdbd;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
