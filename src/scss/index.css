@@ -9,10 +9,11 @@ body {
 }
 
 .App-header h1 {
+  padding: 8px;
   font-weight: 600;
   letter-spacing: -1px;
   color: #fdc22a;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .App-header--grey {
@@ -20,17 +21,21 @@ body {
 }
 
 .Beers-list {
+  padding: 0;
+}
+
+.Beers-list .infinite-scroll-component {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  padding: 0;
+  padding: .5rem;
 }
 
 .Beers-list__item {
   background: #fff;
   list-style: none;
   width: 220px;
-  margin-bottom: 40px;
+  margin: 1.5rem auto;
   padding: 1.2rem;
   display: flex;
   flex-direction: column;

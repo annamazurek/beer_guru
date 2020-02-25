@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import InfiniteScroll from "react-infinite-scroll-component";
+
 
 class Beers extends Component {
   state = {
+    items: Array.from({ length: 20 }),
     beers: [],
     per: 20,
     page: 1,
@@ -11,23 +14,6 @@ class Beers extends Component {
 
   componentDidMount() {
     this.loadBeers();
-    this.scrollListener = window.addEventListener('scroll', (e) => {
-      this.handleScroll(e);
-    })
-  }
-
-  handleScroll = (e) => {
-    // const { scrolling, totalPages, page } = this.state;
-    // if (scrolling) return;
-    // if (totalPages <= page) return;
-    const lastLi = document.querySelector('.Beers-list > li:last-child');
-    // lastLiOffset = distance of the current element relative to the top of the offsetParent node + the inner height of an element in pixels
-    const lastLiOffset = lastLi.offsetTop + lastLi.clientHeight;
-    // pageOffset = the number of pixels the document is currently scrolled along the vertical axis + the interior height of the window in pixels
-    const pageOffset = window.pageYOffset + window.innerHeight;
-    let bottomOffset = 20;
-    if(pageOffset > lastLiOffset - bottomOffset) this.loadMore();
-    console.log(11)
   }
 
   loadBeers = () => {
@@ -46,6 +32,7 @@ class Beers extends Component {
 
   loadMore = () => {
     this.setState(prevState => ({
+      items: this.state.items.concat(Array.from({ length: 20 })),
       page: prevState.page + 1,
       // scrolling: true
     }), this.loadBeers)
@@ -66,7 +53,14 @@ class Beers extends Component {
     return (
       <div className="Beers">
         <ul className="Beers-list">
-          { beersList }
+          <InfiniteScroll
+            dataLength={this.state.items.length}
+            next={this.loadMore}
+            hasMore={true}
+            loader={<h4>Loading...</h4>}
+          >
+            { beersList }
+          </InfiniteScroll>
         </ul>
       </div>
     );
