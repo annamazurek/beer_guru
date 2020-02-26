@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 64px;
   background: #f8f8f8;
+  position: relative;
   font-family: Maven Pro, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -31,6 +32,10 @@ body {
   padding: .5rem;
 }
 
+.Beers-list .infinite-scroll-component a {
+  text-decoration: none;
+}
+
 .Beers-list__item {
   background: #fff;
   list-style: none;
@@ -51,14 +56,14 @@ body {
 }
 
 .Beers-list__img {
-  height: 180px;
+  height: 10rem;
   margin-bottom: 8px;
 }
 
 .Beers-list__name {
   width: 100%;
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #fdc22a;
   text-overflow: ellipsis;
@@ -70,9 +75,109 @@ body {
 .Beers-list__tag {
   width: 100%;
   margin: 0;
+  font-size: .9rem;
   text-align: center;
   color: #bdbdbd;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.Details {
+  background: #fff;
+  width: 60%;
+  height: fit-content;
+  position: fixed;
+  color: #737373;
+  border-radius: 4px;
+  font-size: .9rem;
+  padding: 40px;
+}
+
+.Details-main {
+  display: flex;
+}
+
+.Details--background-grey {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.589);
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Details__img {
+  height: 20rem;
+  margin-right: 40px;
+}
+
+.Details__header {
+  margin: 0 0 6px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.Details__tag {
+  margin: 0 0 32px;
+  color: #bdbdbd;
+  position: relative;
+}
+
+.Details__tag::after {
+  content: '';
+  width: 3rem;
+  height: 4px;
+  background: #fdc22a;
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+}
+
+.Details__params {
+  margin-right: 16px;
+}
+
+.Details__params strong {
+  font-weight: 600;
+}
+
+.Details__pairing {
+  font-weight: 600;
+  margin: 24px 0 4px;
+}
+
+.Details__pairing-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.Details__another {
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.loader {
+  border: 2px solid #eaeaea;
+  border-top: 2px solid #fdc22a;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 8px auto;
+  position: absolute;
+  bottom: 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

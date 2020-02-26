@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 64px;
   background: $grey-light;
+  position: relative;
   font-family: Maven Pro, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,6 +27,7 @@ body {
     }
   }
 }
+
 .Beers {
   &-list {
     padding: 0;
@@ -34,14 +36,10 @@ body {
       flex-wrap: wrap;
       justify-content: space-evenly;
       padding: .5rem;
+      a {
+        text-decoration: none;
+      }
     }
-    // border: 1px solid red;
-      // margin: 0 auto;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: space-evenly;
-    // padding: 0;
-
     &__item {
       background: #fff;
       list-style: none;
@@ -60,14 +58,13 @@ body {
       }
     }
     &__img {
-      // width: 80px;
-      height: 180px;
+      height: 10rem;
       margin-bottom: 8px;
     }
     &__name {
       width: 100%;
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1.25rem;
       font-weight: 600;
       color: $orange;
       text-overflow: ellipsis;
@@ -78,6 +75,7 @@ body {
     &__tag {
       width: 100%;
       margin: 0;
+      font-size: .9rem;
       text-align: center;
       color: $grey-mid;
       text-overflow: ellipsis;
@@ -85,4 +83,95 @@ body {
       white-space: nowrap;
     }
   }
+}
+
+.Details {
+  background: #fff;
+  width: 60%;
+  height: fit-content;
+  position: fixed;
+  color: $grey;
+  border-radius: 4px;
+  font-size: .9rem;
+  padding: 40px;
+  
+  &-main {
+    display: flex;
+  }
+  &--background-grey {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.589);
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__img {
+    height: 20rem;
+    margin-right: 40px;
+  }
+  &__header {
+    margin: 0 0 6px;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  &__tag {
+    margin: 0 0 32px;
+    color: $grey-mid;
+    position: relative;
+    &::after {
+      content: '';
+      width: 3rem;
+      height: 4px;
+      background: $orange;
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+    }
+  }
+  &__params {
+    margin-right: 16px;
+    strong {
+      font-weight: 600;
+    }
+  }
+  // &__desc {
+
+  // }
+  &__pairing {
+    font-weight: 600;
+    margin: 24px 0 4px;
+    &-list {
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+    }
+    // &-item {
+
+    // }
+  }
+  &__another {
+    font-size: .9rem;
+    font-weight: 600;
+  }
+}
+
+.loader {
+  border: 2px solid $grey-loader;
+  border-top: 2px solid $orange;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 8px auto;
+  position: absolute;
+  bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
