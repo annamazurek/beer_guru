@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Link, BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import InfiniteScroll from "react-infinite-scroll-component";
-import Details from './Details';
 
 
 class Beers extends Component {
@@ -67,7 +66,6 @@ class Beers extends Component {
               loader={<div className="loader"></div>}
               scrollThreshold={.95}
             >
-            {/* <Route path={'/' + beer.id} /> */}
               { beersList }
             </InfiniteScroll>
           </ul>

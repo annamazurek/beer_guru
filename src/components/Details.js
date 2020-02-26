@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class Details extends Component {
   state = {
@@ -21,15 +20,10 @@ class Details extends Component {
   }
 
   handleClick = () => {
-    // this.props.match.params = {beer_id: null}
-    console.log(this.props.match.params)
-
+    this.props.history.replace('/');
   }
 
   render(){
-    console.log(this.props.match.params.beer_id)
-    console.log(this.state.beer.id)
-    console.log(this.props)
     const foodPair = this.state.beer.food_pairing;
     const foodPairList = foodPair.map(food => {
       return (
@@ -38,7 +32,7 @@ class Details extends Component {
     })
 
     return (
-      <div className="Details--background-grey"  onClick={this.handleClick}>
+      <div className="Details--background-grey"  onClick={this.handleClick} id="popup">
         <div className="Details">
         
           <div className="Details-main">

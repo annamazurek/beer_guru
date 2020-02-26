@@ -12,8 +12,6 @@ body {
 }
 
 .App {
-  // border: 1px solid black;
-  // width: 100%;
   &-header {
     h1 {
       padding: 8px;
@@ -138,9 +136,6 @@ body {
       font-weight: 600;
     }
   }
-  // &__desc {
-
-  // }
   &__pairing {
     font-weight: 600;
     margin: 24px 0 4px;
@@ -149,9 +144,6 @@ body {
       padding: 0;
       list-style: none;
     }
-    // &-item {
-
-    // }
   }
   &__another {
     font-size: .9rem;
