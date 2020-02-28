@@ -9,8 +9,6 @@ class Beers extends Component {
     items: Array.from({ length: 20 }),
     per: 20,
     page: 1,
-    // totalPages: null,
-    // scrolling: false
   }
 
   componentDidMount() {
@@ -25,8 +23,6 @@ class Beers extends Component {
       .then(res => {
           this.setState({
             beers: [...beers, ...res],
-            // scrolling: false,
-            // totalPages: res.total_pages
           })
         })
   }
@@ -38,19 +34,19 @@ class Beers extends Component {
     this.setState(prevState => ({
       items: this.state.items.concat(Array.from({ length: 20 })),
       page: prevState.page + 1,
-      // scrolling: true
     }), this.loadBeers)
   }
 
   render() {
-    const beers = this.state.beers;
+    const {beers} = this.state;
     const beersList = beers.map(beer => {
+      // console.log(beer.ibu, beer.abv, beer.ebc)
       return (
         <Link to={'/' + beer.id}>
-          <li className="Beers-list__item" key={beer.id}>
+          <li className="Beers-list__item" key={ beer.id }>
             <img className="Beers-list__img" src={ beer.image_url } alt={'Bottle of beer: ' + beer.name} />
-            <h2 className="Beers-list__name" title={beer.name}>{ beer.name }</h2>
-            <p className="Beers-list__tag" title={beer.tagline}>{ beer.tagline }</p>
+            <h2 className="Beers-list__name" title={ beer.name }>{ beer.name }</h2>
+            <p className="Beers-list__tag" title={ beer.tagline }>{ beer.tagline }</p>
           </li>
         </Link>
       )
