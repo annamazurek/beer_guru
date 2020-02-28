@@ -40,7 +40,6 @@ class Beers extends Component {
   render() {
     const {beers} = this.state;
     const beersList = beers.map(beer => {
-      // console.log(beer.ibu, beer.abv, beer.ebc)
       return (
         <Link to={'/' + beer.id}>
           <li className="Beers-list__item" key={ beer.id }>

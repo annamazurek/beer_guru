@@ -3,8 +3,6 @@ import Beers from './components/Beers';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Details from './components/Details';
 
-
-
 function App() {
   return (
     <BrowserRouter>

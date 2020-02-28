@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Details extends Component {
   state = {
@@ -11,6 +12,7 @@ class Details extends Component {
   componentDidMount(){
     let id = this.props.match.params.beer_id;
     let url = `https://api.punkapi.com/v2/beers/${id}`;
+    
     fetch(url)
       .then(res => res.json())
       .then(res => {
@@ -38,8 +40,9 @@ class Details extends Component {
      
   }
 
-  handleClick = () => {
-    this.props.history.replace('/');
+  handleClick = (e) => {
+    e.stopPropagation()
+    this.props.history.push('/');
   }
 
   render(){
@@ -47,21 +50,23 @@ class Details extends Component {
     const foodPair = beer.food_pairing;
     const foodPairList = foodPair.map(food => {
       return (
-        <li className="Details__pairing-item">- { food }</li>
+        <li className="Details__pairing-item"> { food }</li>
       )
     })
 
     const simBeers = this.state.similarBeers.map(beer => {
       return(
-        <div className="Details__similar-beer">
-          <img src={beer.image_url} className="Details__similar-img" />
-          <p className="Details__similar-name" title={ beer.name }>{beer.name}</p>
-        </div>
+        <Link to={'/' + beer.id}>
+          <div className="Details__similar-beer">
+            <img src={beer.image_url} className="Details__similar-img" alt={"Beer: " + beer.name}/>
+            <p className="Details__similar-name" title={ beer.name }>{beer.name}</p>
+          </div>
+        </Link>
       )
     })
 
     return (
-      <div className="Details--background-grey"  onClick={this.handleClick} id="popup">
+      <div className="Details--background-grey" onClickCapture={this.handleClick} id="popup">
         <div className="Details">
         
           <div className="Details-main">
@@ -82,11 +87,10 @@ class Details extends Component {
 
           <section className="Details__similar">
             <h4 className="Details__similar-header">You might also like:</h4>
-            <div className="Details__similar-container">
-              { simBeers }
-            </div>
+              <div className="Details__similar-container">
+                { simBeers }
+              </div>
           </section>
-
         </div>
       </div>
 

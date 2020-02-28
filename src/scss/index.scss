@@ -42,7 +42,7 @@ body {
       background: #fff;
       list-style: none;
       width: 220px;
-      margin: 1.5rem auto;
+      margin: 1.5rem 16px;
       padding: 1.2rem;
       display: flex;
       flex-direction: column;
@@ -87,13 +87,13 @@ body {
   background: #fff;
   max-width: 500px;
   width: 60%;
-  height: fit-content;
   position: fixed;
   color: $grey;
   border-radius: 4px;
   font-size: .9rem;
-  padding: 40px;
-  
+  padding: 40px 40px 16px;
+  overflow: auto;
+
   &-main {
     display: flex;
   }
@@ -142,61 +142,55 @@ body {
     margin: 24px 0 4px;
     &-list {
       margin: 0 0 24px;
-      padding: 0;
+      padding: 8px;
       list-style: none;
     }
-  }
-  &__another {
-    font-size: .9rem;
-    font-weight: 600;
+    &-item {
+      list-style: '-';
+    }
   }
 
   &__similar {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     &-container {
-
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
     }
     &-beer {
       display: flex;
-      max-width: 120px;
-      width: 100%;
-
+      width: 125px;
+      flex: 1;
       flex-direction: column;
-      align-content: center;
-      justify-content: center;
-      flex-wrap: wrap;
       padding: 12px;
-      border: 1px solid $grey-light;
+      border: 1px solid $grey-loader;
       border-radius: 2px;
-      
+      margin: 0 4px 8px;
     }
     &-header {
+      margin-bottom: 12px;
+      font-size: .85rem;
     }
     &-img {
       height: 112px;
       align-self: center;
-
+      margin-bottom: 12px;
     }
     &-name {
       width: 100%;
-      // font-size: inherit;
       margin: 0;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
       font-weight: 600;
-      font-size: .9rem;
-      align-self: center;
-
-
+      font-size: .85rem;
+      text-align: center;
     }
   }
 }
-// .Details__similar-img {
-//   height: 200px;
-
-// }
 
 .loader {
   border: 2px solid $grey-loader;
@@ -213,4 +207,51 @@ body {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 780px) {
+  .Details {
+      width: 80%;
+      &__similar {
+        &-beer {
+          width: 100px;
+        }
+        &-img {
+          height: 80px;
+        }
+    }
+  }
+}
+
+@media (max-width: 644px) {
+  .Details {
+    padding: 20px;
+    font-size: .8rem;
+
+    &__img {
+      height: 10rem;
+    }
+  }
+}
+
+@media (max-width: 544px) {
+  .Details {
+    width: 90%;
+    max-height: 90vh;
+    &-main {
+      flex-direction: row-reverse;
+    }
+    &__img {
+      height: 6rem;
+      margin: 0 0 0 0px;
+    }
+    &__similar {
+      &-beer {
+        width: 80px;
+      }
+      &-img {
+        height: 60px;
+      }
+    }
+  }
 }
