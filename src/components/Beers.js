@@ -41,7 +41,7 @@ class Beers extends Component {
     const {beers} = this.state;
     const beersList = beers.map(beer => {
       return (
-        <Link to={'/' + beer.id}>
+        <Link to={'/beer_guru/' + beer.id}>
           <li className="Beers-list__item" key={ beer.id }>
             <img className="Beers-list__img" src={ beer.image_url } alt={'Bottle of beer: ' + beer.name} />
             <h2 className="Beers-list__name" title={ beer.name }>{ beer.name }</h2>

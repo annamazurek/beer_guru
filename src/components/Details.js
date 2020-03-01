@@ -42,7 +42,7 @@ class Details extends Component {
 
   handleClick = (e) => {
     e.stopPropagation()
-    this.props.history.push('/');
+    this.props.history.push('/beer_guru');
   }
 
   render(){
@@ -56,7 +56,7 @@ class Details extends Component {
 
     const simBeers = this.state.similarBeers.map(beer => {
       return(
-        <Link to={'/' + beer.id}>
+        <Link to={'/beer_guru/' + beer.id}>
           <div className="Details__similar-beer">
             <img src={beer.image_url} className="Details__similar-img" alt={"Beer: " + beer.name}/>
             <p className="Details__similar-name" title={ beer.name }>{beer.name}</p>
