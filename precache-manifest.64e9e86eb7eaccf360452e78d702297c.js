@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "828259fa90df59d0b9c74a1087520703",
+    "revision": "3eb57c9f46d6b706c7b9e86e7a9f8fdc",
     "url": "/beer_guru/index.html"
   },
   {
-    "revision": "e44e3aa30fe0df6f4cc8",
+    "revision": "9d6babcf9f90d77191ed",
     "url": "/beer_guru/static/css/main.baa2a973.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/beer_guru/static/js/2.260f88c1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e44e3aa30fe0df6f4cc8",
-    "url": "/beer_guru/static/js/main.22887267.chunk.js"
+    "revision": "9d6babcf9f90d77191ed",
+    "url": "/beer_guru/static/js/main.0b763c28.chunk.js"
   },
   {
     "revision": "65f597ba193029b09917",

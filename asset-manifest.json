@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/beer_guru/static/css/main.baa2a973.chunk.css",
-    "main.js": "/beer_guru/static/js/main.22887267.chunk.js",
-    "main.js.map": "/beer_guru/static/js/main.22887267.chunk.js.map",
+    "main.js": "/beer_guru/static/js/main.0b763c28.chunk.js",
+    "main.js.map": "/beer_guru/static/js/main.0b763c28.chunk.js.map",
     "runtime-main.js": "/beer_guru/static/js/runtime-main.f8f8c779.js",
     "runtime-main.js.map": "/beer_guru/static/js/runtime-main.f8f8c779.js.map",
     "static/js/2.260f88c1.chunk.js": "/beer_guru/static/js/2.260f88c1.chunk.js",
     "static/js/2.260f88c1.chunk.js.map": "/beer_guru/static/js/2.260f88c1.chunk.js.map",
     "index.html": "/beer_guru/index.html",
-    "precache-manifest.6d8a819b9affd35552e27a66d8e8c4e3.js": "/beer_guru/precache-manifest.6d8a819b9affd35552e27a66d8e8c4e3.js",
+    "precache-manifest.64e9e86eb7eaccf360452e78d702297c.js": "/beer_guru/precache-manifest.64e9e86eb7eaccf360452e78d702297c.js",
     "service-worker.js": "/beer_guru/service-worker.js",
     "static/css/main.baa2a973.chunk.css.map": "/beer_guru/static/css/main.baa2a973.chunk.css.map",
     "static/js/2.260f88c1.chunk.js.LICENSE.txt": "/beer_guru/static/js/2.260f88c1.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f8f8c779.js",
     "static/js/2.260f88c1.chunk.js",
     "static/css/main.baa2a973.chunk.css",
-    "static/js/main.22887267.chunk.js"
+    "static/js/main.0b763c28.chunk.js"
   ]
 }
